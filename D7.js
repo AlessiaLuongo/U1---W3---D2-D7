@@ -2,31 +2,84 @@
   Scrivi una funzione per concatenare due stringhe ricevute come parametri, selezionando solamente i primi 2 caratteri della
   prima e gli ultimi 3 della seconda. Converti la stringa risultante in maiuscolo e mostrala con un console.log().
 */
+const animals = function (word1, word2) {
+  const firstAnimal = word1.slice(0, 2);
+  const secondAnimal = word2.slice(word2.length - 3);
+  let animali = firstAnimal + secondAnimal;
+  console.log(animali.toUpperCase());
+};
+animals("dog", "cameleon");
 
 /* ESERCIZIO 2 (for)
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
+const someNumbers = function () {
+  const myArrey = [];
+  for (let i = 0; i < 10; i++) {
+    let casualNumber = Math.floor(Math.random() * 101);
+    myArrey.push(casualNumber)[i];
+  }
+  return myArrey;
+};
+console.log(someNumbers());
 
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
+const numeri = [3, 5, 6, 7, 100];
+const numberiPari = function (array) {
+  return array.filter((e) => e % 2 === 0);
+};
+console.log(numberiPari(numeri));
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+const numbers = [5, 10, 15, 25];
+const nomeFunzione = function (arrayDiNumeri) {
+  let result = 0;
+  arrayDiNumeri.forEach((e) => {
+    result += e;
+  });
+  return result;
+};
+console.log(nomeFunzione(numbers));
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+const sum = function (x) {
+  return x.reduce(
+    (valoreIniziale, valoreDaSommare) => (valoreIniziale += valoreDaSommare)
+  );
+};
+console.log(sum(numbers));
 
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
+const anotherSum = function (array, n) {
+  let arrayMappato = array.map((e) => {
+    return (e += n);
+  });
+  return arrayMappato;
+};
+console.log(anotherSum(numbers, 1000));
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
+const nice = ["EPICODE", "is", "great"];
+
+const myArray = function (arrayDiStringhe) {
+  let array = arrayDiStringhe.map((e) => {
+    e = e.length;
+    return e;
+  });
+  return array;
+};
+console.log(myArray(nice));
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
